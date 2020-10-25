@@ -9,7 +9,7 @@ In addition to [Wrangler](https://github.com/cloudflare/wrangler) you will need 
 To generate using [wrangler](https://github.com/cloudflare/wrangler)
 
 ```
-wrangler generate projectname https://github.com/cloudflare/kotlin-worker-hello-world
+wrangler generate projectname https://github.com/griffio/kotlin-worker-hello-world
 ```
 
 Further documentation for Wrangler can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler).
