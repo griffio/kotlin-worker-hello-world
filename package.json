@@ -2,7 +2,7 @@
   "name": "{{ project-name }}",
   "version": "1.0.0",
   "description": "Kotlin hello world for Cloudflare Workers",
-  "main": "index.js",
+  "main": "build/distributions/{{ project-name }}.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
