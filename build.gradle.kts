@@ -18,7 +18,7 @@ dependencies {
 }
 
 kotlin {
-    js(IR) {
+    js(LEGACY) {
         browser {
             webpackTask {
                 output.libraryTarget = Target.SELF
