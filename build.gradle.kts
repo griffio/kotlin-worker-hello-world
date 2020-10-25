@@ -18,11 +18,12 @@ dependencies {
 }
 
 kotlin {
-    js(LEGACY) {
+    js(IR) { /* new backend compiler enables aggressive optimizations of output bundle */
         browser {
             webpackTask {
                 output.libraryTarget = Target.SELF
             }
         }
+        binaries.executable()
     }
 }
