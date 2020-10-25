@@ -1,5 +1,7 @@
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackOutput.Target
+
 plugins {
-    id("org.jetbrains.kotlin.js") version "1.3.72"
+    kotlin("js") version "1.4.10"
 }
 
 group = "org.example"
@@ -12,16 +14,15 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-js"))
     testImplementation(kotlin("test-js"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.0-M1")
 }
 
-kotlin.target.browser {
-}
-
-
-tasks.register("buildWorker") {
-    dependsOn("browserProductionWebpack")
-    doLast {
-        /* Kotlin js output assumes window exists, which it won't on Workers. Hack around it */
-        file("$projectDir/index.js").writeText("const window=this; " + file("$projectDir/build/distributions/${rootProject.name}.js").readText())
+kotlin {
+    js(IR) {
+        browser {
+            webpackTask {
+                output.libraryTarget = Target.SELF
+            }
+        }
     }
 }
