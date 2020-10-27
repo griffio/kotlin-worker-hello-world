@@ -14,7 +14,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-js"))
     testImplementation(kotlin("test-js"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.0-M1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.0")
 }
 
 kotlin {
